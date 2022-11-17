@@ -122,24 +122,6 @@ const App = () => {
           </div>
         </div>
       }
-      {
-        windowLoading
-        && <div className='preload'>
-          {
-            fontsloaded
-              ? <h1 onClick={handleOpenSite}>click to start</h1>
-              : <div className="progress">
-                <div className="progress-bar progress-bar-striped progress-bar-animated"
-                  role="progressbar"
-                  aria-label="Animated striped example"
-                  aria-valuenow="100"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style={{ width: "100%" }}></div>
-              </div>
-          }
-        </div>
-      }
     </div>
   )
 }

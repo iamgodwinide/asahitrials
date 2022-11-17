@@ -1,3 +1,29 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+
+server{
+        server_name enter.asahitrials.xyz.com www.enter.asahitrials.xyz.com;
+
+    location / {
+        proxy_pass http://localhost:8915; #whatever port your app runs on
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    
+}
+
+server{
+    server_name enter.asahitrials.xyz.com www.enter.asahitrials.xyz.com;
+
+    location / {
+        proxy_pass http://localhost:8915; #whatever port your app runs on
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
